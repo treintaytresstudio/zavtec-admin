@@ -36,6 +36,27 @@ class User{
         }
     }
 
+    //Iniciar sesión Proceso
+    public function loginProceso($user, $password){
+        $stmt = $this->pdo->prepare("SELECT id, rol FROM users WHERE user = :user AND password = :password");
+        $passwordHash = md5($password); //Convertimos password a MD5
+        $stmt->bindParam(":user", $user,  PDO::PARAM_STR);
+        $stmt->bindParam(":password", $passwordHash, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_OBJ);
+        $rol = $user->rol;
+        $count = $stmt->rowCount();
+
+
+        if($count > 0 && $rol == 3){
+            $_SESSION['id'] = $user->id;
+            echo 1;
+        }else{
+            return false;
+        }
+    }
+
     //Regresa datos del usuario
     public function userData($user_id){
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");

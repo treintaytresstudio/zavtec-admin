@@ -7,13 +7,7 @@ body {
 
 /*----------- GENERAL -------------*/
 .nav-section {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center; }
   .nav-section a {
     padding-right: 15px;
@@ -36,13 +30,7 @@ main {
   padding: 25px !important; }
 
 .center-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center; }
 
 .avatar-app {
@@ -52,13 +40,7 @@ main {
   background-position: center !important; }
 
 .d-fac {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center; }
 
 .table-data {
@@ -80,17 +62,8 @@ main {
     padding: 0; }
 
 .section-title {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center; }
   .section-title h2 {
     font-size: 38px;
@@ -106,22 +79,9 @@ main {
 .full {
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   background: #fff; }
   .full .input-field {
@@ -176,17 +136,8 @@ main {
   position: fixed;
   bottom: 0;
   left: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   background: #fff; }
   .footer-brand .client {
@@ -204,7 +155,6 @@ main {
 /*----------- MATERIALIZE -------------*/
 input[type=text]:not(.browser_default):focus:not([readonly]) {
   border-bottom: 1px solid #E51C20 !important;
-  -webkit-box-shadow: 0 1px 0 0 #E51C20;
   box-shadow: 0 1px 0 0 #E51C20; }
 
 input[type=text]:not(.browser_default):focus:not([readonly]) + label {
@@ -212,7 +162,6 @@ input[type=text]:not(.browser_default):focus:not([readonly]) + label {
 
 input[type=password]:not(.browser_default):focus:not([readonly]) {
   border-bottom: 1px solid #E51C20 !important;
-  -webkit-box-shadow: 0 1px 0 0 #E51C20;
   box-shadow: 0 1px 0 0 #E51C20; }
 
 input[type=password]:not(.browser_default):focus:not([readonly]) + label {
@@ -220,7 +169,6 @@ input[type=password]:not(.browser_default):focus:not([readonly]) + label {
 
 input[type=email]:not(.browser_default):focus:not([readonly]) {
   border-bottom: 1px solid #E51C20 !important;
-  -webkit-box-shadow: 0 1px 0 0 #E51C20;
   box-shadow: 0 1px 0 0 #E51C20; }
 
 input[type=email]:not(.browser_default):focus:not([readonly]) + label {
@@ -228,7 +176,6 @@ input[type=email]:not(.browser_default):focus:not([readonly]) + label {
 
 input[type=textarea]:not(.browser_default):focus:not([readonly]) {
   border-bottom: 1px solid #E51C20 !important;
-  -webkit-box-shadow: 0 1px 0 0 #E51C20;
   box-shadow: 0 1px 0 0 #E51C20; }
 
 input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
@@ -247,13 +194,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
   width: 100%;
   height: 150px;
   background: #E51C20;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   padding-left: 25px; }
   .slide-out-header .name {
@@ -276,17 +217,8 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
   width: 100%;
   height: 75px;
   background: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 25px;
   position: fixed;
@@ -294,13 +226,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
   left: 0;
   z-index: 9999; }
   .menu-top .menu-top-left {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center; }
     .menu-top .menu-top-left a {
       color: #fff !important;
@@ -327,25 +253,13 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
         top: 4px; }
   .menu-top .menu-section {
     height: 75px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
     display: none; }
     .menu-top .menu-section h4 {
       color: #fff; }
   .menu-top .user-info {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center; }
     .menu-top .user-info .avatar-app {
       width: 45px;
@@ -399,13 +313,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
       -o-transition: all 200ms ease-in;
       -ms-transition: all 200ms ease-in;
       transition: all 200ms ease-in;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
       align-items: center; }
       .sidebar #leftside-navigation ul li a:hover {
         color: #E51C20; }
@@ -433,13 +341,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
         color: #aeb2b7; }
 
 .hello {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center; }
   .hello img {
     width: 50px;
@@ -454,9 +356,6 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
   color: #fff; }
   .box-info .box-container {
     border-radius: 6px;
-    background-image: -webkit-gradient(linear, left bottom, left top, from(#f77062), to(#E51C20));
-    background-image: -webkit-linear-gradient(bottom, #f77062 0%, #E51C20 100%);
-    background-image: -o-linear-gradient(bottom, #f77062 0%, #E51C20 100%);
     background-image: linear-gradient(to top, #f77062 0%, #E51C20 100%);
     padding: 20px; }
   .box-info .header h4 {
@@ -465,13 +364,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
     margin: 0;
     padding: 0; }
   .box-info .middle {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center; }
     .box-info .middle i {
       font-size: 48px;
@@ -480,13 +373,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
       font-size: 60px;
       font-weight: bold; }
   .box-info .footer {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
     justify-content: flex-start;
     padding: 10px; }
     .box-info .footer .btn {
@@ -518,13 +405,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
     color: #ccc; }
 
 .register-error {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 20px !important;
   font-size: 18px;
@@ -534,13 +415,7 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
 
 .profile .profile-top {
   margin-top: 25px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center; }
   .profile .profile-top h1, .profile .profile-top h4, .profile .profile-top h6 {
     display: block !important;
@@ -552,18 +427,8 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
     margin-right: 15px; }
 
 .vacantes {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column; }
 
 .vacantes-info img {
@@ -598,3 +463,20 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
   background-size: cover !important;
   background-position: center !important;
   display: block; }
+
+.account-login {
+  margin-top: 15px; }
+  .account-login a {
+    color: #000;
+    font-size: 18px; }
+    .account-login a span {
+      color: #E51C20;
+      font-weight: bold; }
+
+#pension_wrap, #dep_otros_wrap, #dep_num_hijos_wrap,
+#licencia_manejo_wrap, #avance_actualmente_estudiando_wrap, #avance_tramite_wrap,
+#estado_tramite_titulo_wrap, #otra_escuela_wrap, #agregarCurso, .exitoCurso,
+#num_credito_inf_wrap, #descuento_vsm_wrap, #agregarExperiencia, .exitoExperiencia {
+  display: none; }
+
+/*# sourceMappingURL=lecxa_admin.css.map */

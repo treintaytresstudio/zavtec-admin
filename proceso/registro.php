@@ -1,10 +1,10 @@
 <?php 
 	$page = 'Registro';
 ?>
-<?php include 'includes/header.php'; ?>
-<div class="full">
+<?php include '../includes/header.php'; ?>
+<div class="full" style="height: auto; margin-top: 50px;">
 	<div class="brand-logo animated fadeInUp">
-		<img src="assets/img/logo.png" alt="logo">
+		<img src="../assets/img/logo.png" alt="logo">
 	</div>
 	<div class="center-box login-form animated fadeIn">
 		<div class="header">
@@ -59,4 +59,4 @@
 		</div>
 	</div>
 </div>
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

@@ -3,6 +3,7 @@
     include 'database/connection.php';
     include 'classes/User.php';
     include 'classes/Vacante.php';
+    include 'classes/SolicitudVacante.php';
 
     //GLOBAL 
     global $pdo;
@@ -27,6 +28,7 @@
     //Include classes -> instanciamos las clases
     $GFUser = new User($pdo);
     $GFVacante = new Vacante($pdo);
+    $GFSolicitudVacante = new SolicitudVacante($pdo);
    
     //Dir -->directorio dónde se encuentra instalada la aplicación
     define("BASE_URL", $_SERVER['DOCUMENT_ROOT']."/zavtec-admin");

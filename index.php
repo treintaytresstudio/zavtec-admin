@@ -1,11 +1,11 @@
-<?php include 'includes/header.php'; ?>
 <?php 
+	include_once 'core/init.php';
+
 	//Si el usuario no está logueado, lo regresamos al login
 	if($GFUser->loggedIn() === true){
-		header('Location: home.php');
+		header('Location: inicio/index.php');
 
 	}else{
 		header('Location: login.php');
 	}
 ?>
-<?php include 'includes/footer.php'; ?>

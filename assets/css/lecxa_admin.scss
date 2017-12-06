@@ -664,6 +664,26 @@ input[type=textarea]:not(.browser_default):focus:not([readonly])+label{
 
 }
 
+.account-login{
+	margin-top: 15px;
+	a{
+		
+		color: $main;
+		font-size: 18px;
+
+		span{
+			color: $accent;
+			font-weight: bold;
+		}
+	}
+}
+
+#pension_wrap,#dep_otros_wrap,#dep_num_hijos_wrap,
+#licencia_manejo_wrap, #avance_actualmente_estudiando_wrap,#avance_tramite_wrap,
+#estado_tramite_titulo_wrap,#otra_escuela_wrap,#agregarCurso,.exitoCurso,
+#num_credito_inf_wrap,#descuento_vsm_wrap,#agregarExperiencia,.exitoExperiencia{
+	display: none;
+}
 
 
 

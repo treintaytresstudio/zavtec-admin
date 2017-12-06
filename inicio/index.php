@@ -8,7 +8,7 @@
 			header('Location: ../proceso/index.php');
 		}
 	}else{
-		header('Location: login.php');
+		header('Location: ../login.php');
 	}
 ?>
 <main>

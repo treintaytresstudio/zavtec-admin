@@ -21,8 +21,11 @@
 
       <!-- Dropdown Structure -->
       <ul id='dropdown1' class='dropdown-content'>
-        <!--<li><a href="settings.php">Configuración</a></li>-->
+        <?php if($GFUser->isProspect($user_id) === true){?>
+        <li><a href="logout.php">Cerrar Sesión</a></li>
+        <?php }else{?>
         <li><a href="../logout.php">Cerrar Sesión</a></li>
+        <?php } ?>
       </ul>
     </div>
 </header>
