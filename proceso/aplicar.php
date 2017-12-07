@@ -11,6 +11,12 @@
 	//Datos de la vacante
 	$vacante_id = $_GET['vacante_id'];
 	$vacante = $GFVacante->vacanteData($vacante_id);
+
+		//Datos de la solicitud
+		$solicitudID = $_GET['solicitudID'];
+		$solicitud = $GFSolicitudVacante->solicitudData($solicitudID);
+		$dependientes = $GFSolicitudVacante->solicitudDependientes($solicitudID);
+
 ?>
 
 <?php if(!isset($_GET['solicitudID'])){ ?>

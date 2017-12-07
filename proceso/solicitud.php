@@ -11,7 +11,10 @@
 	//Datos de la solicitud
 	$solicitudID = $_GET['solicitudID'];
 	$solicitud = $GFSolicitudVacante->solicitudData($solicitudID);
-	//$experiencia = $GFSolicitudVacante->solicitudExperiencia($solicitud_id);
+	$dependientes = $GFSolicitudVacante->solicitudDependientes($solicitudID);
+	$vacante_id = $solicitud->vacante_id;
+	$vacante = $GFVacante->vacanteData($vacante_id);
+
 ?>
 
 
@@ -64,7 +67,9 @@
 				<!-- /datos escolares -->
 
 				<!-- cursos -->
+				<div class="cursos-wrap-data">
 				<?php include 'includes/aplicar_cursos__inc.php'; ?>
+				</div>
 				<!-- /cursos -->
 
 				<!-- datos laborales -->

@@ -479,4 +479,43 @@ input[type=textarea]:not(.browser_default):focus:not([readonly]) + label {
 #num_credito_inf_wrap, #descuento_vsm_wrap, #agregarExperiencia, .exitoExperiencia {
   display: none; }
 
+.cursos-data {
+  display: flex;
+  background: #fcfcfc;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  border-radius: 6px; }
+  .cursos-data h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px; }
+  .cursos-data span:hover {
+    color: #E51C20; }
+  .cursos-data span {
+    cursor: pointer; }
+
+.experiencia-data {
+  display: flex;
+  background: #fcfcfc;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #E51C20;
+  margin-bottom: 10px;
+  border-radius: 6px; }
+  .experiencia-data h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px; }
+  .experiencia-data span:hover {
+    color: #E51C20; }
+  .experiencia-data span {
+    cursor: pointer; }
+  .experiencia-data p {
+    margin: 0;
+    padding: 0; }
+
 /*# sourceMappingURL=lecxa_admin.css.map */

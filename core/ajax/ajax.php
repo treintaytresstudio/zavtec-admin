@@ -157,6 +157,22 @@
 	      $GFVacante->deleteVacante($vacante_id);
 
 	}
+	
+	//Borrar Curso
+	  if(isset($_POST['ot']) && $_POST['ot'] === 'deleteCurso'){
+	      $cursoID = $_POST['cursoID'];
+ 
+	      $GFSolicitudVacante->deleteCurso($cursoID);
+
+	}
+
+	//Borrar Experiencia
+	  if(isset($_POST['ot']) && $_POST['ot'] === 'deleteExperiencia'){
+	      $experienciaID = $_POST['experienciaID'];
+ 
+	      $GFSolicitudVacante->deleteExperiencia($experienciaID);
+
+	}
 
 	//Datos del usuario
   	if(isset($_POST['ot']) && $_POST['ot'] === 'deleteUser'){

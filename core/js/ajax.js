@@ -728,8 +728,6 @@ $(document).on("click", ".agregarCursoBtn", function(){
 	var lugar_curso = $("#lugar_curso").val();
 	var solicitudID = $(this).data("solicitud-id");
 
-	console.log(solicitudID);
-
 
 	  	$.ajax({
 	  	    url:ajaxPhp,
@@ -741,13 +739,17 @@ $(document).on("click", ".agregarCursoBtn", function(){
 	  	    }
 	  	})
 	  	.done(function(data) {
-	  		$(".exitoCurso").fadeIn();
+	  		var curso_id = 'curso'+data;
+
+	  		$('.cursos-load').append('<div class="cursos-data" id="'+curso_id+'"><h5>'+nombre_curso+'</h5><span class="eliminarCursoBtn" data-curso-id="'+data+'">Eliminar curso</span></div>');
 	  		$("#nombre_curso").val("");
 	  		$("#fecha_curso").val("");
 	  		$("#lugar_curso").val("");
 
 	  		$("#agregarCurso").fadeOut();
 	  		$(".ingresarCurso").fadeIn();
+
+
 
 	  	});
 });
@@ -785,7 +787,9 @@ $(document).on("click", ".agregarExperienciaBtn", function(){
 	  	    }
 	  	})
 	  	.done(function(data) {
-	  		$(".exitoExperiencia").fadeIn();
+	  		var experiencia_id = 'experiencia'+data;
+
+	  		$('.experiencia-load').append('<div class="experiencia-data" id="experiencia'+data+'"><div><h5>Empresa: '+empresa+'</h5><ul><li> Puesto: '+puesto+'</li><li> Actividades: '+actividades+' </li><li> Salario: '+salario+' </li></ul></div><span class="eliminarExperienciaBtn" data-experiencia-id="'+data+'">Eliminar experiencia</span></div>');
 
 	  		$("#empresa").val("");
 	  		$("#trabajo_actual_val").val("");
@@ -838,7 +842,7 @@ $(document).on("change", "#infonavit_sv", function(){
 			$("#num_credito_inf_wrap").fadeIn();
 			$("#descuento_vsm_wrap").fadeIn();
 		}else{
-			$("#descuento_vsm_wrap").fadeOut();
+			$("#num_credito_inf_wrap").fadeOut();
 			$("#descuento_vsm_wrap").fadeOut();
 		}
 
@@ -1179,26 +1183,6 @@ $(document).on("change", "#monto_pension_sv", function(){
 	  	});
 });
 
-//Dependientes padres
-$(document).on("change", "#dep_padres_sv", function(){
-	var ajaxPhp = '../core/ajax/ajax.php';
-	var val = $(this).val();
-	var solicitudID = $(this).data("solicitud-id");
-
-
-	  	$.ajax({
-	  	    url:ajaxPhp,
-	  	    type: 'POST',
-	  	    data: {ot: 'saveDepSV', val:val, solicitudID:solicitudID},
-	  	    beforeSend: function(){
-	  			//Antes de enviar peticiones
-
-	  	    }
-	  	})
-	  	.done(function(data) {
-
-	  	});
-});
 
 //Dependientes padres
 $(document).on("change", "#dep_padres_sv", function(){
@@ -1268,7 +1252,7 @@ $(document).on("change", "#dep_hermanos_sv", function(){
 	  	$.ajax({
 	  	    url:ajaxPhp,
 	  	    type: 'POST',
-	  	    data: {ot: 'saveDepEsposaHijosSV', val:val, solicitudID:solicitudID},
+	  	    data: {ot: 'saveDepHermanosSV', val:val, solicitudID:solicitudID},
 	  	    beforeSend: function(){
 	  			//Antes de enviar peticiones
 
@@ -1593,6 +1577,44 @@ $(document).on("change", "#des_otro_interes_sv", function(){
 	  	})
 	  	.done(function(data) {
 
+	  	});
+});
+
+//Eliminar curso
+$(document).on("click", ".eliminarCursoBtn", function(){
+	var ajaxPhp = '../core/ajax/ajax.php';
+	var cursoID = $(this).data("curso-id");
+
+	  	$.ajax({
+	  	    url:ajaxPhp,
+	  	    type: 'POST',
+	  	    data: {ot: 'deleteCurso', cursoID:cursoID},
+	  	    beforeSend: function(){
+	  			//Antes de enviar peticiones
+
+	  	    }
+	  	})
+	  	.done(function(data) {
+	  		$("#curso"+cursoID).fadeOut();
+	  	});
+});
+
+//Eliminar experiencia
+$(document).on("click", ".eliminarExperienciaBtn", function(){
+	var ajaxPhp = '../core/ajax/ajax.php';
+	var experienciaID = $(this).data("experiencia-id");
+
+	  	$.ajax({
+	  	    url:ajaxPhp,
+	  	    type: 'POST',
+	  	    data: {ot: 'deleteExperiencia', experienciaID:experienciaID},
+	  	    beforeSend: function(){
+	  			//Antes de enviar peticiones
+
+	  	    }
+	  	})
+	  	.done(function(data) {
+	  		$("#experiencia"+experienciaID).fadeOut();
 	  	});
 });
 

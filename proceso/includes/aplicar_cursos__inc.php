@@ -1,6 +1,11 @@
 <!-- cursos -->
 <div class="row">
 	<h4>Cursos</h4>
+	
+	<div class="cursos-load">
+		<?php $cursos= $GFSolicitudVacante->cursos($solicitudID); ?>
+	</div>
+	
 
 	<p class="exitoCurso">El curso se agregó exitosamente</p>
 

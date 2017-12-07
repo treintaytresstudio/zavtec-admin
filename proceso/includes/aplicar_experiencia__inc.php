@@ -3,9 +3,13 @@
 <div class="row">
 	<h4>Experiencia</h4>
 
+	<div class="experiencia-load">
+		<?php $experiencia = $GFSolicitudVacante->experiencia($solicitudID); ?>
+	</div>
+
 	<p class="exitoExperiencia">El trabajo se agregó exitosamente</p>
 
-	<span class="waves-effect waves-light btn bg-accent ingresarExperiencia"><i class="material-icons left">add</i>Ingresar curso</span>
+	<span class="waves-effect waves-light btn bg-accent ingresarExperiencia"><i class="material-icons left">add</i>Ingresar Experiencia</span>
 
 	<div id="agregarExperiencia">
 
@@ -102,7 +106,7 @@
 		<!-- /item -->
 
 		<div class="input-field col s12">
-			<span class="waves-effect waves-light btn bg-accent agregarExperienciaBtn" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>"><i class="material-icons left">add</i>Agregar curso</span>
+			<span class="waves-effect waves-light btn bg-accent agregarExperienciaBtn" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>"><i class="material-icons left">add</i>Agregar Experiencia</span>
 		</div>
 
 	</div>
