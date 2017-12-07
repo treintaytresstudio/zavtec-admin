@@ -4,35 +4,35 @@
 
 	<!-- item -->
 	<div class="input-field col s12">
-	  <input id="nombre_sv" type="text" placeholder="Escribe tu número" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>">
+	  <input id="nombre_sv" type="text" placeholder="Escribe tu número" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>" value="<?php echo $solicitud->nombre; ?>">
 	  <label for="nombre_sv">Nombre</label>
 	</div>
 	<!-- /item -->
 
 	<!-- item -->
 	<div class="input-field col s12">
-	  <input id="correo_sv" type="text" placeholder="Escribe tu correo electrónico" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>">
+	  <input id="correo_sv" type="text" placeholder="Escribe tu correo electrónico" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>" value="<?php echo $solicitud->email; ?>">
 	  <label for="correo_sv">Correo electrónico</label>
 	</div>
 	<!-- /item -->
 
 	<!-- item -->
 	<div class="input-field col s12">
-	  <input id="telefono_sv" type="text" placeholder="Escribe tu teléfono" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>">
+	  <input id="telefono_sv" type="text" placeholder="Escribe tu teléfono" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>" value="<?php echo $solicitud->telefono; ?>">
 	  <label for="telefono_sv">Teléfono</label>
 	</div>
 	<!-- /item -->
 
 	<!-- item -->
 	<div class="input-field col s12">
-	  <input id="celular_sv" type="text" placeholder="Escribe tu celular" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>">
+	  <input id="celular_sv" type="text" placeholder="Escribe tu celular" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>" value="<?php echo $solicitud->celular; ?>">
 	  <label for="celular_sv">Celular</label>
 	</div>
 	<!-- /item -->
 
 	<!-- item -->
 	<div class="input-field col s12">
-	  	<textarea id="direccion_sv" class="materialize-textarea" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>"></textarea>
+	  	<textarea id="direccion_sv" class="materialize-textarea" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>"><?php echo $solicitud->direccion; ?></textarea>
 		<label for="direccion">Dirección</label>
 	</div>
 	<!-- /item -->
@@ -40,7 +40,11 @@
 	<!-- item -->
 	<div class="input-field col s12">
 	  	<select id="municipio_sv" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>">
+	  		 <?php if($solicitud->municipio !== ''){ ?>
+	  		 <option value="<?php echo $solicitud->municipio; ?>"selected><?php echo $solicitud->municipio; ?></option>
+	  		<?php }else{ ?>
 	  	     <option value="" disabled selected>Selecciona tu municipio</option>
+	  	    <?php } ?>
 	  	     <option value="Santiago">Santiago</option>
 	  	     <option value="Allende">Allende</option>
 	  	     <option value="Montemorelos">Montemorelos</option>
@@ -54,7 +58,11 @@
 	<!-- item -->
 	<div class="input-field col s12">
 	  	<select id="estado_sv" data-solicitud-id="<?php echo $_GET['solicitudID']; ?>">
+	  		 <?php if($solicitud->estado !== ''){ ?>
+	  		 <option value="<?php echo $solicitud->estado; ?>"selected><?php echo $solicitud->estado; ?></option>
+	  	     <?php }else{ ?>
 	  	     <option value="" disabled selected>Selecciona tu estado</option>
+	  	    <?php }  ?>
 	  	     <option value="Nuevo León">Nuevo León</option>
 	  	     <option value="Coahuila">Coahuila</option>
 

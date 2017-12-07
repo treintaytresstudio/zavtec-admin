@@ -16,7 +16,7 @@
       <li class="sub-menu">
         <a href="javascript:void(0);"><i class="material-icons">record_voice_over</i><span>Mis solicitudes</span><i class="arrow fa fa-angle-right pull-right"></i></a>
         <ul>
-          <li><a href="tables-basic.html">Lista de solicitudes</a>
+          <li><a href="solicitudes.php">Lista de solicitudes</a>
           </li>
         </ul>
       </li>

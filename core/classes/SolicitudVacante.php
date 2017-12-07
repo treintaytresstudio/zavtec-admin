@@ -8,21 +8,101 @@ class SolicitudVacante{
 		$this->pdo = $pdo;
 	}
 
-	public function newSolicitudVacante($user_id,$vacante_id){
-		$stmt = $this->pdo->prepare("INSERT INTO solicitud_vacante () VALUES ()");
+	public function totalSolicitudes($user_id){
+		$stmt = $this->pdo->prepare("
+			SELECT
+			vacante_id.
+			FROM 
+			solicitud_r_vacante_user 
+			WHERE user_id = :user_id
+		");
+
+		$stmt->bindParam(":user_id",$user_id, PDO::PARAM_STR);
 		$stmt->execute();
-		echo $this->pdo->lastInsertId();
+	}
+
+	public function newSolicitudVacante($user_id,$vacante_id){
+		$stmt = $this->pdo->prepare("INSERT INTO solicitud_vacante (vacante_id) VALUES (:vacante_id)");
+		$stmt->bindParam(":vacante_id",$vacante_id, PDO::PARAM_STR);
+		$stmt->execute();
+		$solicitud_vacante_id = $this->pdo->lastInsertId();
+
+		echo $solicitud_vacante_id;
 
 		//Asignamos solictud al usuario
-		$this->asignarSolicitud($user_id,$vacante_id);
+		$this->asignarSolicitud($user_id, $vacante_id, $solicitud_vacante_id);
 
 	}
 
-	public function asignarSolicitud($user_id,$vacante_id){
-		$stmt = $this->pdo->prepare("INSERT INTO solicitud_r_vacante_user (user_id,vacante_id) VALUES (:user_id,:vacante_id)");
+	public function asignarSolicitud($user_id, $vacante_id, $solicitud_vacante_id){
+		$stmt = $this->pdo->prepare("INSERT INTO solicitud_r_vacante_user (user_id, vacante_id, solicitud_vacante_id) VALUES (:user_id, :vacante_id, :solicitud_vacante_id)");
 		$stmt->bindParam(":user_id",$user_id, PDO::PARAM_STR);
-		$stmt->bindParam(":vacante_id",$user_id, PDO::PARAM_STR);
+		$stmt->bindParam(":vacante_id",$vacante_id, PDO::PARAM_STR);
+		$stmt->bindParam(":solicitud_vacante_id",$solicitud_vacante_id, PDO::PARAM_STR);
 		$stmt->execute();
+	}
+
+	public function misSolicitudesList($user_id){
+		$stmt= $this->pdo->prepare("
+			SELECT
+			solicitud_vacante.id,
+			solicitud_vacante.fecha_inicio_proceso,
+			solicitud_r_vacante_user.user_id,
+			vacantes.name
+			FROM solicitud_r_vacante_user
+			JOIN solicitud_vacante ON solicitud_r_vacante_user.solicitud_vacante_id = solicitud_vacante.id
+			JOIN vacantes ON solicitud_r_vacante_user.vacante_id = vacantes.id
+			WHERE solicitud_r_vacante_user.user_id = :user_id
+		");
+		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_STR);
+		$stmt->execute();
+
+		$solicitudes = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+		foreach ($solicitudes as $solicitud) {
+			echo '
+					<tr>
+					  <td>'.$solicitud->id.'</td>
+					  <td>'.$solicitud->name.'</td>
+					  <td>'.$solicitud->fecha_inicio_proceso.'</td>
+					  <td>50%</td>
+					  <td><a href="solicitud.php?solicitudID='.$solicitud->id.'"><span class="btn bg-main">Completar</span></a></td>
+					</tr>
+				';
+		}
+
+	}
+
+	public function solicitudData($solicitudID){
+		$stmt = $this->pdo->prepare("
+			SELECT * FROM solicitud_vacante 
+			WHERE solicitud_vacante.id = :solicitud_id 
+		");
+		$stmt->bindParam(":solicitud_id",$solicitudID, PDO::PARAM_STR);
+		$stmt->execute();
+
+		return $stmt->fetch(PDO::FETCH_OBJ);
+
+		
+	}
+
+	public function solicitudExperiencia($solicitud_id){
+		$stmt = $this->pdo->prepare("
+			SELECT * FROM solicitud_experiencia 
+			WHERE solicitud_id = :solicitud_id 
+		");
+		$stmt->bindParam(":solicitud_id",$solicitud_id, PDO::PARAM_STR);
+		$stmt->execute();
+
+		$experiencias = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+		foreach ($experiencias as $experiencia) {
+			
+		}
+
+		
+
+		
 	}
 
 	public function saveData($campo, $solicitudID, $val){
