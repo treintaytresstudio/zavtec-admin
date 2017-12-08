@@ -55,7 +55,11 @@ main{
 	background-size: cover !important;
 	background-position: center !important;
 }
-
+.avatar-inicio{
+	display: block;
+	width: 150px;
+	height: 150px;
+}
 .d-fac{
 	display: flex;
 	align-items:center;
@@ -741,6 +745,12 @@ input[type=textarea]:not(.browser_default):focus:not([readonly])+label{
 	}
 }
 
+#comentarios-load{
+	-webkit-transition: all 0.25s ease-in-out;
+	  -moz-transition: all 0.25s ease-in-out;
+	  -o-transition: all 0.25s ease-in-out;
+	  transition: all 0.25s ease-in-out;
+}
 
 
 

@@ -25,30 +25,15 @@
 						<p>Recuerda revisar tus notificaciones.</p>
 					</div>
 					<div class="hello">
-						<img src="../assets/img/sunny.png" alt="">
-						<span>Buenos días Carlos Ordóñez</span>
+						<!-- saludo -->
+						<?php $GFDashboard->hello($hora); ?>
 					</div>
 				</div>
 				<!-- /title -->
 
 				<div class="row">
 
-					<!-- box -->
-					<div class="col s12 m12 l4 xl4 box-info">
-						<div class="box-container z-depth-1">
-							<div class="header">
-								<h4>Solicitudes de vacantes</h4>
-							</div>
-							<div class="middle">
-								<i class="material-icons">assignment</i>
-								<span>45</span>
-							</div>
-							<div class="footer">
-								<a href="#" class="btn">Ver solicitudes</a>
-							</div>
-						</div>
-					</div>
-					<!-- /box -->
+					<?php $GFDashboard->compTotalSolicitudesVacantes() ?>
 
 					<!-- box -->
 					<div class="col s12 m12 l4 xl4 box-info">
@@ -58,10 +43,10 @@
 							</div>
 							<div class="middle">
 								<i class="material-icons" style="font-size: 75px;">supervisor_account</i>
-								<span>124</span>
+								<span>0</span>
 							</div>
 							<div class="footer">
-								<a href="#" class="btn">Ver solicitudes</a>
+								<a href="#!" class="btn">Ver solicitudes</a>
 							</div>
 						</div>
 					</div>
@@ -75,10 +60,10 @@
 							</div>
 							<div class="middle">
 								<i class="material-icons">message</i>
-								<span>209</span>
+								<span>0</span>
 							</div>
 							<div class="footer">
-								<a href="#" class="btn">Ver mensajes</a>
+								<a href="#!" class="btn">Ver mensajes</a>
 							</div>
 						</div>
 					</div>
@@ -112,51 +97,8 @@
 					<!-- vacantes con mejor rating -->
 					<div class="col s12 m12 l8 xl8">
 						<ul class="collection rating-users z-depth-1">
-						    <li class="collection-item avatar">
-						      <img src="../assets/img/man.png" alt="" class="circle">
-						      <span class="title">Edel Martinez Salazar</span>
-						      <p>Teléfono: 812277384<br>
-						         Email: elv@gmail.com
-						      </p>
-						      <a href="#!" class="secondary-content">10 <small>puntos</small></a>
-						    </li>
-						    
-						    <li class="collection-item avatar">
-						      <img src="../assets/img/man.png" alt="" class="circle">
-						      <span class="title">Edel Martinez Salazar</span>
-						      <p>Teléfono: 812277384<br>
-						         Email: elv@gmail.com
-						      </p>
-						      <a href="#!" class="secondary-content">10 <small>puntos</small></a>
-						    </li>
-
-						    <li class="collection-item avatar">
-						      <img src="../assets/img/man.png" alt="" class="circle">
-						      <span class="title">Edel Martinez Salazar</span>
-						      <p>Teléfono: 812277384<br>
-						         Email: elv@gmail.com
-						      </p>
-						      <a href="#!" class="secondary-content">10 <small>puntos</small></a>
-						    </li>
-
-						    <li class="collection-item avatar">
-						      <img src="../assets/img/man.png" alt="" class="circle">
-						      <span class="title">Edel Martinez Salazar</span>
-						      <p>Teléfono: 812277384<br>
-						         Email: elv@gmail.com
-						      </p>
-						      <a href="#!" class="secondary-content">10 <small>puntos</small></a>
-						    </li>
-
-						    <li class="collection-item avatar">
-						      <img src="../assets/img/man.png" alt="" class="circle">
-						      <span class="title">Edel Martinez Salazar</span>
-						      <p>Teléfono: 812277384<br>
-						         Email: elv@gmail.com
-						      </p>
-						      <a href="#!" class="secondary-content">9 <small>puntos</small></a>
-						    </li>
-						  </ul>
+						   <?php $GFDashboard->solicitudesRanking(); ?>
+						</ul>
 					</div>
 					<!-- /vacantes con mejor rating -->
 
@@ -164,37 +106,16 @@
 					<div class="col s12 m12 l4 xl4">
 						<ul class="collection notifications z-depth-1">
 						    
-						    <li class="collection-item avatar">
+						    <!--<li class="collection-item avatar">
 						      <i class="material-icons circle">message</i>
 						      <span class="title">Roberto Mansur</span>
 						      <p>martes 10 de noviembre <br>
 						         Buenas tardes, quisiera saber acerca de la cámara....
 						      </p>
 						      <a href="#!" class="secondary-content"><i class="material-icons">remove_red_eye</i></a>
-						    </li>
-						     <li class="collection-item avatar">
-						      <i class="material-icons circle">message</i>
-						      <span class="title">Roberto Mansur</span>
-						      <p>martes 10 de noviembre <br>
-						         Buenas tardes, quisiera saber acerca de la cámara....
-						      </p>
-						      <a href="#!" class="secondary-content"><i class="material-icons">remove_red_eye</i></a>
-						    </li>
-						    <li class="collection-item avatar">
-						      <i class="material-icons circle">message</i>
-						      <span class="title">Roberto Mansur</span>
-						      <p>martes 10 de noviembre <br>
-						         Buenas tardes, quisiera saber acerca de la cámara....
-						      </p>
-						      <a href="#!" class="secondary-content"><i class="material-icons">remove_red_eye</i></a>
-						    </li>
-						    <li class="collection-item avatar">
-						      <i class="material-icons circle">message</i>
-						      <span class="title">Roberto Mansur</span>
-						      <p>martes 10 de noviembre <br>
-						         Buenas tardes, quisiera saber acerca de la cámara....
-						      </p>
-						      <a href="#!" class="secondary-content"><i class="material-icons">remove_red_eye</i></a>
+						    </li>-->
+						     <h5 style="padding: 20px;color: #ccc;">No hay mensajes disponibles</h5>
+						      
 						    </li>
 						    
 						  </ul>

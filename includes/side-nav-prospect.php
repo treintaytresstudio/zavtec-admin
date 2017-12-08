@@ -2,9 +2,6 @@
 <aside class="sidebar">
   <div id="leftside-navigation" class="nano">
     <ul class="nano-content">
-      <li <?php if($page == "Mi perfil"){ echo 'class="active"';} ?>>
-        <a href="../proceso/index.php"><i class="material-icons">dashboard</i><span>Mi perfil</span></a>
-      </li>
       <li class="sub-menu <?php if($page == "Vacantes"){ echo 'active';} ?>">
         <a href="javascript:void(0);"><i class="material-icons">account_circle</i><span>Vacantes</span><i class="arrow fa fa-angle-right pull-right"></i></a>
         <ul>

@@ -99,6 +99,12 @@
 				<?php include 'includes/aplicar_intereses__inc.php'; ?>
 				<!-- /intereses -->
 
+				<!-- SUBIR CV -->
+				<div class="row" style="margin-top: 50px;">
+					<div id="subirCV" style="height: auto;overflow: hidden;padding: 25px 0;"></div>
+				</div>
+
+
 			</div>
 				
 		</div>

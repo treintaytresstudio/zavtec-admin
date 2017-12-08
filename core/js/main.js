@@ -13,7 +13,6 @@ $(document).ready(function(){
     e.stopPropagation()
   })
 
-
   $('.datepicker').pickadate({
      selectMonths: true, // Creates a dropdown to control month
      selectYears: 150, // Creates a dropdown of 15 years to control year,
@@ -22,7 +21,30 @@ $(document).ready(function(){
      close: 'Ok',
      closeOnSelect: false // Close upon selecting a date,
    });
-  
+
+  //Tabs
+  $('ul.tabs').tabs('select_tab', 'tab_id');
+
+  //Data tables
+  $('#solicitudes_vacantes').DataTable( {
+      dom: 'Bfrtip',
+      language: {
+              "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json",
+              paginate: {
+                  first:    '«',
+                  previous: '‹',
+                  next:     '›',
+                  last:     '»'
+              },
+      },
+      buttons: [
+          'excelHtml5',
+          'csvHtml5',
+          'pdfHtml5'
+      ]
+  } );
+
+
 });
 
 //UPLOAD CARE
@@ -41,3 +63,21 @@ $(document).ready(function(){
   });
 */
   var widget = uploadcare.initialize();
+
+
+//UPPY UPLOADER 
+  const Uppy = require('uppy/lib/core')
+  const Dashboard = require('uppy/lib/plugins/Dashboard')
+  const Tus = require('uppy/lib/plugins/Tus')
+  
+  const uppy = Uppy({ autoProceed: false })
+    .use(Dashboard, {
+      trigger: '#subirCV'
+    })
+    .use(Tus, {endpoint: '//master.tus.io/files/'})
+    .run()
+   
+  uppy.on('core:complete', (result) => {
+    console.log(`Upload complete! We’ve uploaded these files: ${result.successful}`)
+  })
+

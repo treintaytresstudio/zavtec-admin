@@ -79,6 +79,7 @@
 	      $email = $_POST['email'];
 	      $user = $_POST['user'];
 	      $sex = $_POST['sex'];
+	      $imagen = $_POST['imagen'];
 
 	      if(empty($name)){
 	          echo 5;
@@ -90,6 +91,8 @@
 	          echo 8;
 	      }else if(empty($password)){
 	          echo 9;
+	      }else if(empty($imagen)){
+	          echo 10;
 	      }else{
 
 	          if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
@@ -103,7 +106,7 @@
 	                  //El usuario ya está en uso
 	                  echo 900;
 	              }else{
-	                  $GFUser->registerUserProspect($email, $name, $password, $user, $sex);
+	                  $GFUser->registerUserProspect($email, $name, $password, $user, $sex,$imagen);
 	                 
 	              }
 	          }
@@ -130,6 +133,38 @@
 
 	}
 
+	//Nuevo comentario
+	  if(isset($_POST['ot']) && $_POST['ot'] === 'newComment'){
+	      $comentario = $_POST['comentario'];
+	      $user_id = $_POST['user_id'];
+	      $solicitud_id = $_POST['solicitud_id'];
+
+
+	      if(empty($comentario)){
+	      		//Si el comentario está vació
+	          echo 5;
+	      }else{
+	      		$GFSolicitudVacante->addComment($comentario, $user_id,$solicitud_id);
+	      }
+
+	}
+
+	//Nueva calificacion
+	  if(isset($_POST['ot']) && $_POST['ot'] === 'newCalificacion'){
+	      $calificacion = $_POST['calificacion'];
+	      $solicitud_id = $_POST['solicitud_id'];
+
+
+	      if(empty($calificacion)){
+	      		//Si el comentario está vació
+	          echo 5;
+	      }else{
+	      		$GFSolicitudVacante->addCalificacion($calificacion,$solicitud_id);
+	      }
+
+	}
+	
+
 	//Actualización de vacante 
 	  if(isset($_POST['ot']) && $_POST['ot'] === 'editVacante'){
 	      $name = $_POST['name'];
@@ -155,6 +190,14 @@
 	      $vacante_id = $_POST['vacante_id'];
  
 	      $GFVacante->deleteVacante($vacante_id);
+
+	}
+
+	//Borrar solicitud
+	  if(isset($_POST['ot']) && $_POST['ot'] === 'deleteSolicitud'){
+	      $solicitud_id = $_POST['solicitud_id'];
+	
+	      $GFSolicitudVacante->deleteSolicitud($solicitud_id);
 
 	}
 	

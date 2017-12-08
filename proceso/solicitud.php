@@ -30,6 +30,7 @@
 
 				<div class="row title">
 					<div>
+						<?php $porcentaje = $GFSolicitudVacante->porcentajeLlenado($solicitudID); ?>
 						<h1 style="margin:0;padding: 0;">Solicitud de empleo</h1>
 					</div>
 

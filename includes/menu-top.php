@@ -11,8 +11,6 @@
     <div class="user-info">
         <i class="material-icons menu-notifications">notifications</i>
 
-        <span class="avatar-app" style="background: url(../assets/img/man.png);"></span>
-
         <div class="user-name">
             <span><?php echo $user->name; ?></span>
         </div>

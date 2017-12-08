@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.css">
     <!-- animate -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- data tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.4.2/b-html5-1.4.2/r-2.2.0/datatables.min.css"/>
+
+    <!-- uppy -->
+    <link href="https://unpkg.com/uppy/dist/uppy.min.css" rel="stylesheet">
+    
     <!-- lecxa admin css -->
     <link rel="stylesheet" href="../assets/css/lecxa_admin.css">
 
@@ -25,6 +32,8 @@
 <body>
 
 <?php 
+    //Horario
+
     //Si el usuario no está logueado, lo regresamos al login
     if($GFUser->loggedIn() === true){
         //Usuario conectado

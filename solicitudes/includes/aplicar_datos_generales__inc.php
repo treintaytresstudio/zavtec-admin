@@ -1,6 +1,6 @@
 <!-- datos generales -->
 <div class="row">
-	<div class="avatar-app avatar-inicio" style="background:url(<?php echo $user->imagen ?>);"></div>
+	<div class="avatar-app avatar-inicio" style="background:url(<?php echo $vacante_imagen ?>);"></div>
 	<h4>Datos generales</h4>
 
 	<!-- item -->

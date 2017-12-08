@@ -181,11 +181,12 @@ $(document).ready(function(){
 		var user = $("#user").val();
 		var sex = $("#sex").val();
 		var password = $("#password").val();
+		var imagen = $("#imagen_cv").val();
 
 		$.ajax({
 		    url:ajaxPhp,
 		    type: 'POST',
-		    data: {ot: 'registerUser', name:name, email:email,sex:sex,password: password, user: user},
+		    data: {ot: 'registerUser',imagen:imagen, name:name, email:email,sex:sex,password: password, user: user},
 		    beforeSend: function(){
 		      $("#btnRegister").hide();
 		      $(".loader").show();
@@ -223,6 +224,11 @@ $(document).ready(function(){
 				if(data == 9){
 					$(".register-error").fadeIn();
 					$(".register-error").html("<i class='material-icons'>error</i> La contraseña es requerida.");
+				}
+				//Si la imagen está vacía
+				if(data == 10){
+					$(".register-error").fadeIn();
+					$(".register-error").html("<i class='material-icons'>error</i> La imagen es requerida.");
 				}
 				//Si el correo no tiene buen formato
 				if(data == 100){
@@ -299,6 +305,50 @@ $(document).ready(function(){
 		});
 
 	});
+
+
+	//Agregar un comentario
+	$("#addCommentBtn").click(function(){
+		var comentario = $("#comentario").val();
+		var user_id = $(this).data("user-id");
+		var solicitud_id = $(this).data("solicitud-id");
+
+		$.ajax({
+		    url:ajaxPhp,
+		    type: 'POST',
+		    data: {ot: 'newComment',solicitud_id:solicitud_id, comentario:comentario, user_id:user_id},
+		    beforeSend: function(){
+
+		    }
+		})
+		.done(function(data) {
+			$('.comentarios-no').fadeOut();
+			$('#comentarios-load').prepend('<li class="collection-item avatar animated bounceInUp" style="padding-top: 25px !important;"> <img src="../assets/img/man.png" alt="" class="circle"> <span class="title">'+user_id+'</span> <p style="padding: 15px 0;"> '+comentario+' </p> <a href="#!" class="secondary-content">En este momento</a></li>');
+			$("#comentario").val('');
+		});
+
+	});
+
+	//Agregar calificación
+	$("#addCalificacionBtn").click(function(){
+		var calificacion = $("#calificacionVal").val();
+		var solicitud_id = $(this).data("solicitud-id");
+
+		$.ajax({
+		    url:ajaxPhp,
+		    type: 'POST',
+		    data: {ot: 'newCalificacion',solicitud_id:solicitud_id, calificacion:calificacion},
+		    beforeSend: function(){
+
+		    }
+		})
+		.done(function(data) {
+			var path = window.location.href;
+			window.location.href = path;
+		});
+
+	});
+
 
 	//Comenzar proceso vacante
 	$("#comenzarProcesoBtn").click(function(){
@@ -421,6 +471,54 @@ $(document).on("click", ".deleteUserBtn", function(){
 	  }
 	})
 });
+
+//borramos la solicitud
+$(document).on("click", "#borrarSolicitudBtn", function(){
+	var solicitud_id = $(this).data("solicitud-id");
+	var ajaxPhp = '../core/ajax/ajax.php';
+
+	swal({
+	  title: 'Seguro que deseas eliminar la solicitud?',
+	  text: "Perderás toda su información!",
+	  type: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: 'Si, estoy seguro!'
+	}).then((result) => {
+	  if (result.value) {
+
+	  	//Borramos la solicitud
+	  	$.ajax({
+	  	    url:ajaxPhp,
+	  	    type: 'POST',
+	  	    data: {ot: 'deleteSolicitud', solicitud_id: solicitud_id},
+	  	    beforeSend: function(){
+	  			//Antes de enviar peticións
+	  	    }
+	  	})
+	  	.done(function(data) {
+
+	  		if(data == 1){
+	  			swal({
+	  			  title: 'Eliminado',
+	  			  text: "La solicitud se eliminó exitosamente",
+	  			  type: 'success',
+	  			  showCancelButton: false,
+	  			  confirmButtonColor: '#3085d6',
+	  			  confirmButtonText: 'Ok'
+	  			}).then((result) => {
+	  				if (result.value) {
+	  					window.location.href = "solicitudes-vacantes.php";
+	  				}
+	  			});
+	  		}
+	  	});
+
+	  }
+	})
+});
+
 
 //Propagation
 $(document).on("click", ".deleteVacanteBtn", function(){
@@ -1617,6 +1715,7 @@ $(document).on("click", ".eliminarExperienciaBtn", function(){
 	  		$("#experiencia"+experienciaID).fadeOut();
 	  	});
 });
+
 
 
 

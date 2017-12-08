@@ -85,11 +85,11 @@ class User{
     }
 
     //Registro de usuario prospecto
-    public function registerUserProspect($email, $name, $password, $user, $sex){
+    public function registerUserProspect($email, $name, $password, $user, $sex,$imagen){
         $hashPassword = md5($password);
         $registerTime = date('Y-m-d');
         $rol = 3;
-        $stmt = $this->pdo->prepare("INSERT INTO users (email, password, name, user, rol,register_date,sex) VALUES (:email, :password, :name, :user,:rol,:register_date,:sex)");
+        $stmt = $this->pdo->prepare("INSERT INTO users (email, password, name, user, rol,register_date,sex,imagen) VALUES (:email, :password, :name, :user,:rol,:register_date,:sex,:imagen)");
         $stmt->bindParam(":email", $email , PDO::PARAM_STR);
         $stmt->bindParam(":password", $hashPassword , PDO::PARAM_STR);
         $stmt->bindParam(":name", $name , PDO::PARAM_STR);
@@ -97,6 +97,7 @@ class User{
         $stmt->bindParam(":rol", $rol , PDO::PARAM_STR);
         $stmt->bindParam(":register_date", $registerTime , PDO::PARAM_STR);
         $stmt->bindParam(":sex", $sex , PDO::PARAM_STR);
+        $stmt->bindParam(":imagen", $imagen , PDO::PARAM_STR);
         $stmt->execute();
 
         //Iniciamos sesión

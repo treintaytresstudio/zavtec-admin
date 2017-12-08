@@ -16,6 +16,16 @@
 				<input type="text" id="name">
 				<label for="name">Nombre</label>
 			</div>
+			<!-- imagen de cv -->
+			<div class="form-item input-field">
+				<input 
+				id="imagen_cv" 
+				type="hidden" 
+				role="uploadcare-uploader" 
+				name="content" 
+				data-images-only />
+			</div>
+			<!-- imagen de cv -->
 			<div class="form-item input-field">
 				<input type="email" id="email">
 				<label for="email">Email</label>

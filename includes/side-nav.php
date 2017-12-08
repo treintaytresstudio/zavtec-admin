@@ -25,10 +25,10 @@
           </li>
         </ul>
       </li>
-      <li class="sub-menu">
+      <li class="sub-menu <?php if($page == "Solicitudes para vacantes" || $page == "Solicitud"){ echo 'active';} ?>">
         <a href="javascript:void(0);"><i class="material-icons">assignment</i><span>Solicitudes vacantes</span><i class="arrow fa fa-angle-right pull-right"></i></a>
         <ul>
-          <li><a href="forms-components.html">Lista de vacantes</a>
+          <li><a href="../solicitudes/solicitudes-vacantes.php">Lista de solicitudes para vacantes</a>
           </li>
         </ul>
       </li>

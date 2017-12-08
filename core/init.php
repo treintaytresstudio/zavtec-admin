@@ -4,6 +4,7 @@
     include 'classes/User.php';
     include 'classes/Vacante.php';
     include 'classes/SolicitudVacante.php';
+    include 'classes/Dashboard.php';
 
     //GLOBAL 
     global $pdo;
@@ -21,6 +22,8 @@
     $mes = date('m');
     $ano = date('Y');
     $hoy = strftime("%A, %d de %B del %Y", strtotime($fecha));
+    //Hora actual
+    $hora = date("H");
 
     //Session start --> iniciamos sesión
     session_start();
@@ -29,6 +32,7 @@
     $GFUser = new User($pdo);
     $GFVacante = new Vacante($pdo);
     $GFSolicitudVacante = new SolicitudVacante($pdo);
+    $GFDashboard = new Dashboard($pdo);
    
     //Dir -->directorio dónde se encuentra instalada la aplicación
     define("BASE_URL", $_SERVER['DOCUMENT_ROOT']."/zavtec-admin");

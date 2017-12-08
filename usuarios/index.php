@@ -26,7 +26,7 @@
 						<h2>Lista de usuarios</h2>
 						<p>Esta es la lista de usuarios registrados en la aplicación.</p>
 					</div>
-					<a href="users.php?newUser=1" class="waves-effect waves-light btn light-blue bg-accent">Crear usuario</a>
+					<a href="../usuarios/index.php?newUser=1" class="waves-effect waves-light btn light-blue bg-accent">Crear usuario</a>
 				</div>
 				<div class="table-data">
 					<table border="1">
@@ -73,7 +73,7 @@
 						<h2>Agregar un usuario</h2>
 						<p>Llena todos los datos necesarios para crear un usuario.</p>
 					</div>
-					<a href="users.php" class="waves-effect waves-light btn bg-main">Cancelar</a>
+					<a href="../usuarios/index.php" class="waves-effect waves-light btn bg-main">Cancelar</a>
 				</div>
 				<form class="form-wrap">
 				      <div class="row">
